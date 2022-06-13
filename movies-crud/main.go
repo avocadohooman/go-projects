@@ -90,6 +90,7 @@ func main() {
 
 	movies = append(movies, Movie{ID: "1", Isbn: "434343", Title: "Hello World", Director: &Director{Firstname: "Hello", Lastname: "World"}})
 	movies = append(movies, Movie{ID: "2", Isbn: "545345", Title: "Goodbye World", Director: &Director{Firstname: "Hello", Lastname: "World"}})
+
 	r.HandleFunc("/movies", getMovies).Methods("GET")
 	r.HandleFunc("/movies/{id}", deleteMovie).Methods("DELETE")
 	r.HandleFunc("/movies/{id}", getMovie).Methods("GET")
